@@ -5,8 +5,8 @@ import java.io.DataOutputStream;
 import java.util.List;
 
 import jrat.api.PacketBuilder;
-import jrat.api.RATMenuItemActionListener;
 import jrat.api.RATObject;
+import jrat.api.ui.RATMenuItemActionListener;
 
 public class MenuListener implements RATMenuItemActionListener {
 	
@@ -17,17 +17,15 @@ public class MenuListener implements RATMenuItemActionListener {
 	}
 
 	@Override
-	public void onClick(List<RATObject> servers) {
+	public void onClick(List<RATObject> clients) {
 		try {
-			if (servers.size() > 0) {
-				RATObject server = servers.get(0);
-
-				server.addToSendQueue(new PacketBuilder(DWLPlugin.HEADER, server) {
+			for (RATObject client : clients) {
+				client.addToSendQueue(new PacketBuilder(DWLPlugin.HEADER, client) {
 					@Override
 					public void write(RATObject rat, DataOutputStream dos, DataInputStream dis) throws Exception {
 						dos.writeBoolean(enable);
 					}		
-				});				
+				});	
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
