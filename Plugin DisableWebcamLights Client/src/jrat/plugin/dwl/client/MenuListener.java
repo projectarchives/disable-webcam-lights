@@ -5,7 +5,7 @@ import java.io.DataOutputStream;
 import java.util.List;
 
 import jrat.api.PacketBuilder;
-import jrat.api.RATObject;
+import jrat.api.Client;
 import jrat.api.ui.RATMenuItemActionListener;
 
 public class MenuListener implements RATMenuItemActionListener {
@@ -17,12 +17,12 @@ public class MenuListener implements RATMenuItemActionListener {
 	}
 
 	@Override
-	public void onClick(List<RATObject> clients) {
+	public void onClick(List<Client> clients) {
 		try {
-			for (RATObject client : clients) {
+			for (Client client : clients) {
 				client.addToSendQueue(new PacketBuilder(DWLPlugin.HEADER, client) {
 					@Override
-					public void write(RATObject rat, DataOutputStream dos, DataInputStream dis) throws Exception {
+					public void write(Client rat, DataOutputStream dos, DataInputStream dis) throws Exception {
 						dos.writeBoolean(enable);
 					}		
 				});	
