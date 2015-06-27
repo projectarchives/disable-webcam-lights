@@ -9,7 +9,7 @@ Originally made by Anonmoosekaab and ported to jRAT with permission
 | Name			| Disable Webcam Lights
 | Author     	| Anonmoosekaab
 | Description   | Disables some webcam lights, requires admin permissions
-| Version		| 1.1
+| Version		| 1.2
 
 ## Dependencies
 
