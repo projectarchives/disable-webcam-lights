@@ -46,9 +46,4 @@ public class DWLPlugin extends StubPlugin {
 	public String getName() {
 		return "Disable Webcam Lights";
 	}
-
-	@Override
-	public void onStart() {
-
-	}
 }
